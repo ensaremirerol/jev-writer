@@ -274,7 +274,7 @@ def main(argv):
         lengths += ls
         body_words += nw
     if not tex:
-        n = sum(p[0][1].count("—") for p in paras)
+        n = sum(p[0][1].count("\u2014") for p in paras)
         doc["em_dashes_body"] = n
         if n > cfg["em_dash_max_body"]:
             hits.append(Hit("S5", "hard", f"{n} em dashes (max {cfg['em_dash_max_body']})"))

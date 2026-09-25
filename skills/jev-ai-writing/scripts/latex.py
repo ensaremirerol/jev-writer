@@ -22,7 +22,7 @@ def clean(text):
     t = re.sub(r"\\(ref|autoref|cref|eqref|label)\{[^}]*\}", f" {REF} ", t)
     t = re.sub(r"\\(url|input|include|href)\{[^}]*\}", " ", t)
     t = re.sub(r"\$[^$]*\$", " MATH ", t)
-    t = t.replace("``", '"').replace("''", '"').replace("~", " ").replace("\\%", "%").replace("---", "—").replace("--", "–")
+    t = t.replace("``", '"').replace("''", '"').replace("~", " ").replace("\\%", "%").replace("---", "\u2014").replace("--", "–")
     t = re.sub(r"\\[a-zA-Z]+\*?(\[[^\]]*\])?", " ", t)
     t = re.sub(r"[{}]", "", t)
     return re.sub(r"\s+", " ", t)
@@ -125,7 +125,7 @@ def parse(path, cfg):
         for k in re.findall(r"\\cite[pt]?\{([^}]*)\}", line):
             cite_keys.append((i, [x.strip() for x in k.split(",") if x.strip()]))
         if not in_table and "S5" not in exempt:
-            (dash_abs if abstract_line else dash_body).extend([i] * len(re.findall(r"---|—", line)))
+            (dash_abs if abstract_line else dash_body).extend([i] * len(re.findall(r"---|\u2014", line)))
             if re.search(r"\w \-\- \w", line):
                 hits.append(Hit("S5", "soft", "spaced -- used as a dash; '--' is for ranges", line, i))
         if in_table and r"\caption" not in line:
