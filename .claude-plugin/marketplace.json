@@ -1,0 +1,15 @@
+{
+  "name": "jev-writer",
+  "description": "Jev-powered checks for academic paper writing.",
+  "owner": {
+    "name": "Ensar Emir Erol"
+  },
+  "plugins": [
+    {
+      "name": "jev-writer",
+      "source": "./",
+      "description": "Paper-writing checks with Jev: fact support, level, complexity, flow, AI-writing signs.",
+      "version": "0.2.0"
+    }
+  ]
+}

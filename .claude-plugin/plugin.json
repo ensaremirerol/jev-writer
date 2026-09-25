@@ -1,0 +1,17 @@
+{
+  "name": "jev-writer",
+  "displayName": "Jev Writer",
+  "version": "0.2.0",
+  "description": "Paper-writing checks with Jev (TypeSafe System One): fact support against sources, writing level, sentence complexity, flow, and signs of AI writing.",
+  "author": {
+    "name": "Ensar Emir Erol"
+  },
+  "userConfig": {
+    "openrouter_api_key": {
+      "type": "string",
+      "title": "OpenRouter API key",
+      "description": "Used to call Jev through OpenRouter. Leave empty if you set OPENROUTER_API_KEY yourself or ran scripts/setup.py.",
+      "sensitive": true
+    }
+  }
+}

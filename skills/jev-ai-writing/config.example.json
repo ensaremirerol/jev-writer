@@ -1,0 +1,25 @@
+{
+  "disable": [],
+  "em_dash_max_body": 3,
+  "em_dash_max_abstract": 0,
+  "negative_parallelism_max": 3,
+  "allow_vocabulary": [
+    "robust"
+  ],
+  "proper_nouns": [
+    "Synthea",
+    "Turtle"
+  ],
+  "glossary": [
+    {
+      "pattern": "\\bKG\\b",
+      "advice": "write 'knowledge graph' in running text"
+    },
+    {
+      "pattern": "validation|validated",
+      "advice": "reserve 'validation' for SHACL; use 'evaluation'",
+      "unless_before": "SHACL"
+    }
+  ],
+  "specific_detail": "\\d|\\b[A-Z]{2,}|\\b(?:one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)\\b|\\w[:_]\\w|\\bSynthea\\b|\\bencounters?\\b"
+}
